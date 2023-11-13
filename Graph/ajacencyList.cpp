@@ -9,7 +9,6 @@ vector < vector < int >> printAdjacency(int n, int m, vector < vector < int >> &
         int u = edges[i][0];
         int v = edges[i][1];
 
-        // Ensure vertices are within the valid range
         list[u].push_back(v);        
         list[v].push_back(u);
 
