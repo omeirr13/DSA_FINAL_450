@@ -1,15 +1,18 @@
+//User function template for C++
+class Solution{
+public:	
+	
+	
+	int isPalindrome(string s)
+	{
+	    int low = 0;
+	    int high = s.length() - 1;
+	    
+	    while(low < high)
+	    {
+	        if(s[low++] != s[high--]) return 0;
+	    }
+	    return 1;
+	}
 
-class Solution {
-public:
-    void helper(vector<char>& s, int& low, int& high)
-    {
-        if(low >= high) return;
-
-        swap(s[low++], s[high--]);
-        helper(s, low, high);
-    }
-    void reverseString(vector<char>& s) {
-        int low = 0, high = s.size() - 1;
-        helper(s, low, high);
-    }
 };
