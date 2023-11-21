@@ -4,12 +4,17 @@ public:
 	
 	int isPalindrome(string s)
 	{
-	    string s2(s.length(), '\0');
-	    for(int j = s.length() - 1;j>=0;j--)
+	    stack<char> st;
+	    
+	    for(char ch : s) st.push(ch);
+	    
+	    int i = 0;
+	    while(!st.empty())
 	    {
-	        s2[s.length() - j - 1] = s[j];
+	        if(st.top() != s[i]) return 0;
+	        st.pop();
+	        i++;
 	    }
-	    if(s2 != s)return 0;
 	    return 1;
 	}
 
