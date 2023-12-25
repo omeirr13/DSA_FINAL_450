@@ -14,17 +14,14 @@ public:
     void helper(TreeNode* root, string& s)
     {
         if(!root) return;
-        //1(2(4)
         s += to_string(root->val);
 
         if(!root->left && !root->right) return;
-        if(!root->left && root->right) s += "()";
-        if(root->left)
-        {
-            s += '(';
-            helper(root->left, s);
-            s += ')';
-        }
+
+        s += '(';
+        helper(root->left, s);
+        s += ')';
+        
         if(root->right)
         {
             s += '(';
